@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-// Adding in a second process.
+// Add publish directive
 
 nextflow.preview.dsl=2
 
@@ -15,6 +15,8 @@ process SayHello {
 }
 
 process SortGreetings {
+    publishDir "results/greetings"
+
     input:
     path "unsorted_names.txt"
 
