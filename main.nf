@@ -5,6 +5,9 @@
 nextflow.preview.dsl=2
 
 process SayHello {
+    memory '4G'
+    cpus 2
+
     input:
     val name
 
@@ -16,6 +19,8 @@ process SayHello {
 
 process SortGreetings {
     publishDir "results/greetings"
+    memory '2G'
+    cpus 1
 
     input:
     path "unsorted_names.txt"
